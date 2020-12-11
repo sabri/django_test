@@ -14,7 +14,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
-        fields = ['url', 'name']
+        fields = ('url', 'name')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -35,11 +35,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         return user
 
 
-class DictionarySerializer(serializers.HyperlinkedModelSerializer):
+class DictionarySerializer(serializers.ModelSerializer):
     class Meta:
         model = Dictionary
-        fields = ['word', 'label']
-
-
+        fields = '__all__'
 
 

@@ -19,9 +19,9 @@ class UserProfile(models.Model):
 
 
 class Dictionary(models.Model):
-    word = models.CharField(blank=True, null=True, max_length=200)
-    label = models.CharField(blank=True, null=True, max_length=200)
+    word = models.CharField(max_length=200)
+    label = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.word
+        return "{}".format(self.word, self.label)
 
